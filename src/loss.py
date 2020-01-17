@@ -72,6 +72,11 @@ class FocalLoss(nn.Module):
 
             assigned_annotations = bbox_annotation[IoU_argmax, :]
 
+            print(assigned_annotations)
+            print(assigned_annotations.shape)
+            print(positive_indices.shape)
+            print(targets.shape)
+            
             targets[positive_indices, :] = 0
             targets[positive_indices, assigned_annotations[positive_indices, 4].long()] = 1
 
