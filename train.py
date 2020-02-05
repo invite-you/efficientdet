@@ -54,11 +54,11 @@ def train(opt):
                    "collate_fn": collater,
                    "num_workers": 12}
 
-    training_set = CocoDataset(root_dir=opt.data_path, set="train2017",
+    training_set = CocoDataset("/content/gdrive/My Drive/findShip/train.pickle",#root_dir=opt.data_path, set="train2017",
                                transform=transforms.Compose([Normalizer(), Augmenter(), Resizer()]))
     training_generator = DataLoader(training_set, **training_params)
 
-    test_set = CocoDataset(root_dir=opt.data_path, set="val2017",
+    test_set = CocoDataset("/content/gdrive/My Drive/findShip/test.pickle",#root_dir=opt.data_path, set="val2017",
                            transform=transforms.Compose([Normalizer(), Resizer()]))
     test_generator = DataLoader(test_set, **test_params)
 
