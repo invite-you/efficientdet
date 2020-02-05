@@ -266,13 +266,13 @@ class CocoDataset(Dataset):
             maxX = float(annot['rbbox']['maxX']),
             maxY = float(annot['rbbox']['maxY']),
             
-            if mixX < 0 : minX = 1
+            if minX < 0 : minX = 1
             if minY < 0 : minY = 1
             if maxX > 1024 : minX = 1023
             if maxY > 1024 : minY = 1023
             
             annotation = np.zeros((1, 5))
-            annotation[0, 0] = mixX
+            annotation[0, 0] = minX
             annotation[0, 1] = minY
             annotation[0, 2] = maxX
             annotation[0, 3] = maxY
