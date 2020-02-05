@@ -2,6 +2,8 @@ import os
 import torch
 import numpy as np
 
+import pickle
+
 from torch.utils.data import Dataset, DataLoader
 from pycocotools.coco import COCO
 import cv2
