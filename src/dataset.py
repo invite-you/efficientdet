@@ -261,10 +261,10 @@ class CocoDataset(Dataset):
         # parse annotations        
         for idx, annot in enumerate([self.rbboxs[index]]):
             
-            minX = float(annot['rbbox']['minX']),
-            minY = float(annot['rbbox']['minY']),
-            maxX = float(annot['rbbox']['maxX']),
-            maxY = float(annot['rbbox']['maxY']),
+            minX = float(annot['rbbox']['minX'])
+            minY = float(annot['rbbox']['minY'])
+            maxX = float(annot['rbbox']['maxX'])
+            maxY = float(annot['rbbox']['maxY'])
             
             if minX < 0 : minX = 1
             if minY < 0 : minY = 1
