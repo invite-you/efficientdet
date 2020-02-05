@@ -288,7 +288,7 @@ class CocoDataset(Dataset):
         return self.labels[label]
 
     def num_classes(self):
-        return len(self.self.classes)
+        return len(self.classes)
 
 
 def collater(data):
